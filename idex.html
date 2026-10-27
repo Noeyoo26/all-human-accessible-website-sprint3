@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="NL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloemenveld Prototype </title>
+    <link rel="stylesheet" herf="syle.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+    <div class="app-container">
+        <img src="./assets/Bloemenveld_kaart.svg" alt="Kaart van het bloemenveld" class="map-image">
+       
+        <header class="app-header">
+            <button class="menu-btn" aria-label="Menu">&#9776;</button>
+            <h1>Verkennen</h1>
+        </header>
+
+        <div class="pin-plant">
+            <img src="./assets/Pin_plant-02.svg" alt="Pin op de kaart voor Witte Dovenetel">
+    </div>
+
+    <main class="app-container">
+
+        <section class="popup-card">
+            <div class="drag-handle"></div>
+
+        <nav class="tabs-nav" aria-label="Kaartweergave opties">
+            <ul class="tabs">
+                <li><a href="index.html" class="tab active">Kaart Overzicht</a></li>
+                <li><a href="collectie.html" class="tab">Plantencollectie</a></li>
+            </ul>
+    </nav>
+
+    article class="card-body">
+                    <div class="text-content">
+                        <h2>Witte Dovenetel</h2>
+                        <p class="scientific-name">Lamium album</p>
+                        
+                        <p class="description">
+                            <strong>Lijkt op brandnetel maar prikt niet.</strong> Bloeit lang door zacht weer.
+                        </p>
+                        
+                        <div class="ecological-role">
+                            <strong>Ecologische rol:</strong>
+                            <p>Hommels halen nectar via "gaatjes" in de bloem en voor veel vlinders een plant van waarde.</p>
+                        </div>          
+                    </div>
+
+                    <div class="image-content">
+                        <img src="assets/plant.jpg" alt="Afbeelding van Witte Dovenetel">
+                    </div>
+                </article>
+
+                <footer class="card-footer">
+                    <button class="arrow-btn" aria-label="Inklappen">&#9662;</button>
+                </footer>
+            </section>
+     </main>
+
+     <!-- Onderste navigatiebalk -->
+        <nav class="bottom-nav" aria-label="Hoofdnavigatie">
+            <ul>
+                <li>
+                    <a href="index.html" class="nav-item">
+                        <span class="nav-icon"><img src="assets/icon-02.svg" alt=""></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="nav-item active">
+                        <span class="nav-icon"><img src="assets/icon-03.svg" alt=""></span>
+                        <span class="nav-text">Veldverkenner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <span class="nav-icon"><img src="assets/icon-04.svg" alt=""></span>
+                        <span class="nav-text">Nieuws</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="collectie.html" class="nav-item">
+                        <span class="nav-icon"><img src="assets/icon-01.svg" alt=""></span>
+                        <span class="nav-text">Collectie</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    
+</body>
+</html>
