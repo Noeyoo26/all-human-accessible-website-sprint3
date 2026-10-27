@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #a38c75;
+    --card-background: #ffffff;
+    --text-dark: #5c4033;
+    --font-family: 'Montserrat', sans-serif; 
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* App Container (Nesting toegepast) */
+.app-container {
+    width: 100%;
+    max-width: 412px;
+    height: 100vh;
+    max-height: 847px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    background-color: #222;
+
+    .map-image {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        z-index: 0;
+        transform-origin: center;
+        transform: rotate(90deg) scale(4.5) translate(0, 0);
+    }
+
+    .pin-plant {
+        position: absolute; 
+        top: 20%;           
+        left: 60%;          
+        width: 80px;        
+        height: auto;
+        z-index: 10;        
+        transform: translate(-50%, -50%);
+
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowarp;
+    border: 0px;
+}
+
+
+/* Zorg dat elementen boven de kaart liggen */
+.app-header, 
+.app-content, 
+.bottom-nav {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+
+    .menu-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        margin-right: 20px;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    h1 {
+        font-family: var(--font-family);
+        font-size: 20px;
+        color: #4a3b32;
+        position: absolute;
+        left: 37%;
+        /* FEEDBACK VERWERKT: '%' eenheid expliciet ingesteld */
+        transform: translateX(-37%); 
+        margin: 0;
+    }
+}
+
+/* Inhoudsgebied */
+.app-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+
+    &.collection-page {
+        align-items: stretch;
+    }
+}
+
+/* Pop-up kaart (Semantisch: section) */
+.popup-card {
+    background: #ffffff;
+    opacity: 0.99;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    padding: 15px 20px 10px 20px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+
+    &.full-height {
+        border-radius: 0;
+        overflow-y: auto;
+    }
+
+    .drag-handle {
+        width: 40px;
+        height: 4px;
+        background-color: #ccc;
+        border-radius: 2px;
+        margin: 0 auto 12px auto;
+    }
+
+    /* Tabs met Nesting en Interactie */
+    .tabs {
+        display: flex;
+        background-color: #f2ede9;
+        border-radius: 20px;
+        padding: 5px;
+        margin-bottom: 15px;
+        list-style: none;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+
+        li {
+            flex: 1;
+        }
+
+        .tab {
+            display: inline-block;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #7c6f64;
+            border-radius: 16px;
+            text-align: center;
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+            &:hover {
+                color: var(--text-dark);
+            }
+
+            &.active {
+                background-color: var(--primary-color);
+                color: #ffffff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+        }
+    }
+
+    /* Inhoud van de plantenkaart (Article) */
+    .card-body {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+
+        .text-content {
+            flex: 1;
+
+            h2 {
+                font-size: 18px;
+                color: var(--text-dark);
+                margin-bottom: 2px;
+            }
+
+            .scientific-name {
+                font-size: 12px;
+                font-style: italic;
+                color: #8c7b70;
+                margin-bottom: 10px;
+            }
+
+            .description {
+                font-size: 12px;
+                color: #333;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .ecological-role {
+                font-size: 11px;
+                color: #333;
+                line-height: 1.3;
+
+                strong {
+                    color: #222;
+                }
+            }
+        }
+
+        .image-content {
+            width: 110px;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 16px;
+            }
+        }
+    }
+
+    .card-footer {
+        text-align: center;
+        margin-top: 5px;
+
+        .arrow-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: #666;
+            cursor: pointer;
+            padding: 4px;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: translateY(2px);
+            }
+        }
+    }
+}
+
+/* Styling specifiek voor Plantencollectie pagina */
+.collection-intro {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    .plant-card {
+        background: #f9f7f5;
+        border-radius: 12px;
+        padding: 8px;
+        text-align: center;
+        transition: transform 0.2s ease;
+        gap: 20px;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+
+        img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 6px;
+        }
+
+        h3 {
+            font-size: 13px;
+            color: var(--text-dark);
+        }
+
+        p {
+            font-size: 10px;
+            font-style: italic;
+            color: #8c7b70;
+        }
+    }
+}
+
+/* Onderste Navigatiebalk */
+.bottom-nav {
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px 0;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        margin: 0;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #888;
+        font-size: 12px;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            color: #8C6239;
+            transform: translateY(-1px);
+        }
+
+        &.active {
+            color: #8C6239;
+            font-weight: bold;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="NL">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloemenveld Prototype </title>
-    <link rel="stylesheet" herf="syle.css"> 
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
 
+  <!-- De hoofdcontainer met de map op de achtergrond -->
     <div class="app-container">
         <img src="./assets/Bloemenveld_kaart.svg" alt="Kaart van het bloemenveld" class="map-image">
-       
+
         <header class="app-header">
             <button class="menu-btn" aria-label="Menu">&#9776;</button>
             <h1>Verkennen</h1>
@@ -19,21 +20,25 @@
 
         <div class="pin-plant">
             <img src="./assets/Pin_plant-02.svg" alt="Pin op de kaart voor Witte Dovenetel">
-    </div>
+        </div>
+                        
+        <!-- Middelste inhoud (Semantisch: main) -->
+        <main class="app-content">
+            
+            <!-- Semantisch: section in plaats van div -->
+            <section class="popup-card">
+                <div class="drag-handle"></div>
 
-    <main class="app-container">
+                <!-- Tabs bovenaan met werkende links -->
+                <nav class="tabs-nav" aria-label="Kaartweergave opties">
+                    <ul class="tabs">
+                        <li><a href="index.html" class="tab active">Kaart Overzicht</a></li>
+                        <li><a href="collectie.html" class="tab">Plantencollectie</a></li>
+                    </ul>
+                </nav>
 
-        <section class="popup-card">
-            <div class="drag-handle"></div>
-
-        <nav class="tabs-nav" aria-label="Kaartweergave opties">
-            <ul class="tabs">
-                <li><a href="index.html" class="tab active">Kaart Overzicht</a></li>
-                <li><a href="collectie.html" class="tab">Plantencollectie</a></li>
-            </ul>
-    </nav>
-
-    article class="card-body">
+                <!-- Semantisch: article voor de specifieke plantinformatie -->
+                <article class="card-body">
                     <div class="text-content">
                         <h2>Witte Dovenetel</h2>
                         <p class="scientific-name">Lamium album</p>
@@ -57,10 +62,11 @@
                     <button class="arrow-btn" aria-label="Inklappen">&#9662;</button>
                 </footer>
             </section>
-     </main>
+        </main>
 
-     <!-- Onderste navigatiebalk -->
-        <nav class="bottom-nav" aria-label="Hoofdnavigatie">
+        <!-- Onderste navigatiebalk -->
+        <nav class="bottom-nav">
+            <h2 class="visually-hidden">Hoofdnavigatie</h2>
             <ul>
                 <li>
                     <a href="index.html" class="nav-item">
@@ -89,7 +95,7 @@
             </ul>
         </nav>
 
-    </div>
+    </div>  
     
 </body>
 </html>

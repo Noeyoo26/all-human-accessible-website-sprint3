@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="NL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloemenveld Prototype - Plantencollectie</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+      
+    <div class="app-container">
+        <header class="app-header">
+            <button class="menu-btn" aria-label="Menu">&#9776;</button>
+            <h1>Collectie</h1>
+        </header>
+                        
+        <main class="app-content collection-page">
+            <section class="popup-card full-height">
+                <div class="drag-handle"></div>
+
+                <nav class="tabs-nav" aria-label="Kaartweergave opties">
+                    <ul class="tabs">
+                        <li><a href="index.html" class="tab">Kaart Overzicht</a></li>
+                        <li><a href="collectie.html" class="tab active">Plantencollectie</a></li>
+                    </ul>
+                </nav>
+
+                <h2>Alle Planten</h2>
+                <p class="collection-intro">Ontdek platten in de Bloemenveld Frankendael.</p>
+
+                <!-- Grid met verzamelde planten -->
+                <div class="plant-grid">
+                    <article class="plant-card">
+                        <img src="assets/plant.jpg" alt="Witte Dovenetel">
+                        <h3>Witte Dovenetel</h3>
+                        <p>Lamium album</p>
+                    </article>
+
+                    <article class="plant-card">
+                        <img src="assets/plant.jpg" alt="Paardenbloem">
+                        <h3>Paardenbloem</h3>
+                        <p>Taraxacum officinale</p>
+                    </article>
+
+                    <article class="plant-card">
+                        <img src="assets/plant.jpg" alt="Madeliefje">
+                        <h3>Madeliefje</h3>
+                        <p>Bellis perennis</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav" aria-label="Hoofdnavigatie">
+            <ul>
+                <li>
+                    <a href="index.html" class="nav-item">
+                        <span class="nav-icon"><img src="assets/icon-02.svg" alt=""></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="nav-item">
+                        <span class="nav-icon"><img src="assets/icon-03.svg" alt=""></span>
+                        <span class="nav-text">Veldverkenner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <span class="nav-icon"><img src="assets/icon-04.svg" alt=""></span>
+                        <span class="nav-text">Nieuws</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="collectie.html" class="nav-item active">
+                        <span class="nav-icon"><img src="assets/icon-01.svg" alt=""></span>
+                        <span class="nav-text">Collectie</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    
+</body>
+</html>
