@@ -14,13 +14,20 @@
         <img src="./assets/Bloemenveld_kaart.svg" alt="Kaart van het bloemenveld" class="map-image">
 
         <header class="app-header">
-            <button class="menu-btn" aria-label="Menu">&#9776;</button>
-            <h1>Verkennen</h1>
+            <button class="menu-btn" type="button">
+            &#9776;
+            <span class="visually-hidden">Menu</span>
+            </button>
+            <h1>Veldverkenner</h1>
         </header>
 
-        <div class="pin-plant">
-            <img src="./assets/Pin_plant-02.svg" alt="Pin op de kaart voor Witte Dovenetel">
-        </div>
+        <button class="pin-plant" type="button">
+            <img src="./assets/Pin_plant-02.svg" 
+             alt="Op de kaart voor de Witte Dovenetel"
+             width="65"
+             height="65">
+        </button>
+        
                         
         <!-- Middelste inhoud (Semantisch: main) -->
         <main class="app-content">
@@ -30,7 +37,8 @@
                 <div class="drag-handle"></div>
 
                 <!-- Tabs bovenaan met werkende links -->
-                <nav class="tabs-nav" aria-label="Kaartweergave opties">
+                <nav class="tabs-nav">
+                    <h2 class="visually-hidden">Kaartweergave opties</h2>
                     <ul class="tabs">
                         <li><a href="index.html" class="tab active">Kaart Overzicht</a></li>
                         <li><a href="collectie.html" class="tab">Plantencollectie</a></li>
@@ -54,12 +62,16 @@
                     </div>
 
                     <div class="image-content">
-                        <img src="assets/plant.jpg" alt="Afbeelding van Witte Dovenetel">
+                        <img src="assets/Dovenetel.jpg" alt="Witte dovenetel in bloei met groene bladeren">
                     </div>
                 </article>
 
+
                 <footer class="card-footer">
-                    <button class="arrow-btn" aria-label="Inklappen">&#9662;</button>
+                    <button class="arrow-btn" type="button" onclick="document.querySelector('.popup-card').classList.toggle('expanded')">
+                    &#9662;
+                    <span class="visually-hidden">Inklappen of Uitklappen</span>
+                 </button>
                 </footer>
             </section>
         </main>

@@ -11,15 +11,19 @@
       
     <div class="app-container">
         <header class="app-header">
-            <button class="menu-btn" aria-label="Menu">&#9776;</button>
-            <h1>Collectie</h1>
-        </header>
+            <button class="menu-btn" type="button">
+            &#9776;
+            <span class="visually-hidden">Menu</span>
+            </button>
+        <h1>Collectie</h1>
+    </header>
                         
         <main class="app-content collection-page">
             <section class="popup-card full-height">
                 <div class="drag-handle"></div>
 
-                <nav class="tabs-nav" aria-label="Kaartweergave opties">
+                <nav class="tabs-nav">
+                    <h2 class="visually-hidden">Kaartweergave opties</h2>
                     <ul class="tabs">
                         <li><a href="index.html" class="tab">Kaart Overzicht</a></li>
                         <li><a href="collectie.html" class="tab active">Plantencollectie</a></li>
@@ -29,30 +33,105 @@
                 <h2>Alle Planten</h2>
                 <p class="collection-intro">Ontdek platten in de Bloemenveld Frankendael.</p>
 
-                <!-- Grid met verzamelde planten -->
-                <div class="plant-grid">
-                    <article class="plant-card">
-                        <img src="assets/plant.jpg" alt="Witte Dovenetel">
-                        <h3>Witte Dovenetel</h3>
-                        <p>Lamium album</p>
+        
+    <!-- Lijst met plantenkaarten -->
+        <div class="plant-list">
+
+            <!-- Kaart 1:  -->
+                    <article class="plant-card img-left" onclick="this.classList.toggle('expanded')">
+                        <div class="card-preview">
+                            <div class="card-image">
+                                <img src="assets/Dovenetel.jpg" alt="Witte Dovenetel">
+                            </div>
+                            <div class="card-info">
+                                <h3>Witte Dovenetel</h3>
+                                <p class="scientific-name">Lamium album</p>
+                                <span class="card-tag">Lente</span>
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <p class="description">
+                                <strong>Lijkt op brandnetel maar prikt niet.</strong> Bloeit lang door zacht weer.
+                            </p>
+                            <div class="ecological-role">
+                                <strong>Ecologische rol:</strong>
+                                <p>Hommels halen nectar via "gaatjes" in de bloem en voor veel vlinders een plant van waarde.</p>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="plant-card">
-                        <img src="assets/plant.jpg" alt="Paardenbloem">
-                        <h3>Paardenbloem</h3>
-                        <p>Taraxacum officinale</p>
+                    <!-- Kaart 2  -->
+                    <article class="plant-card img-right" onclick="this.classList.toggle('expanded')">
+                        <div class="card-preview">
+                            <div class="card-info">
+                                <h3>Paardenbloem</h3>
+                                <p class="scientific-name">Taraxacum officinale</p>
+                                <span class="card-tag">Zomer</span>
+                            </div>
+                            <div class="card-image">
+                                <img src="assets/Paardenbloem.jpg" alt="Paardenbloem">
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <p class="description">
+                                <strong>Belangrijke vroege voedingsbron voor bijen.</strong> Bekend om de gele bloemen en pluisbollen.
+                            </p>
+                            <div class="ecological-role">
+                                <strong>Ecologische rol:</strong>
+                                <p>Biedt veel stuifmeel en nectar vroeg in het seizoen.</p>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="plant-card">
-                        <img src="assets/plant.jpg" alt="Madeliefje">
-                        <h3>Madeliefje</h3>
-                        <p>Bellis perennis</p>
+                    <!-- Kaart 3 -->
+                    <article class="plant-card img-left" onclick="this.classList.toggle('expanded')">
+                        <div class="card-preview">
+                            <div class="card-image">
+                                <img src="assets/Madeliefje.jpg" alt="Madeliefje">
+                            </div>
+                            <div class="card-info">
+                                <h3>Madeliefje</h3>
+                                <p class="scientific-name">Bellis perennis</p>
+                                <span class="card-tag">Algemeen</span>
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <p class="description">
+                                <strong>Blijft het hele jaar door bloeien.</strong> Sluit 's nachts en bij regenweer.
+                            </p>
+                            <div class="ecological-role">
+                                <strong>Ecologische rol:</strong>
+                                <p>Aantrekkelijk voor kleine zweefvliegen en kevers.</p>
+                            </div>
+                        </div>
                     </article>
-                </div>
-            </section>
-        </main>
 
-        <nav class="bottom-nav" aria-label="Hoofdnavigatie">
+                    <!-- Kaart 4 -->
+                    <article class="plant-card img-right" onclick="this.classList.toggle('expanded')">
+                        <div class="card-preview">
+                            <div class="card-info">
+                                <h3>Brandnetel</h3>
+                                <p class="scientific-name">Urtica dioica</p>
+                                <span class="card-tag">Heel het jaar</span>
+                            </div>
+                            <div class="card-image">
+                                <img src="assets/brandnetel.jpg" alt="Brandnetel">
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <p class="description">
+                                <strong>Waardplant voor rupsen van vlinders.</strong> Bekend om brandharen.
+                                </p>
+                                <div class="ecological-role">
+                                    <strong>Ecologische rol:</strong>
+                                    <p>Essentieel voor de voortplanting van verschillende dagvlindersoorten.</p>
+                            </div>
+                        </div>
+                    </article>
+         </main>
+
+        <nav class="bottom-nav">
+            <h2 class="visually-hidden">Hoofdnavigatie</h2>
             <ul>
                 <li>
                     <a href="index.html" class="nav-item">
