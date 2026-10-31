@@ -68,7 +68,7 @@ body {
         }
     }
 
-.visually-hidden{
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -78,6 +78,7 @@ body {
     clip: rect(0, 0, 0, 0);
     white-space: nowarp;
     border: 0px;
+}
 }
 
 
