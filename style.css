@@ -486,7 +486,7 @@ body {
    Altijd helemaal onderaan, zodat ze eerdere mobiele regels overschrijven.
    ========================================================================== */ 
 
- @media (mid-width: 768px) {
+ @media (min-width: 768px) {
     /* 1. Rustigere achtergrond en wat marge rondom de app */
     body {
         background-color: #f7f5f2;
