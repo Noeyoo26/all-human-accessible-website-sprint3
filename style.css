@@ -1,9 +1,17 @@
+/* ==========================================================================
+   1. RESET & BOX-SIZING
+   Zorgt dat elke browser vanaf hetzelfde nulpunt begint.
+   ==========================================================================  */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* ==========================================================================
+   2. CUSTOM PROPERTIES (:root)
+   Je centrale kleurenpalet en lettertypes op één plek.
+   ========================================================================== */
 :root {
     --primary-color: #72583c;
     --primary-light: #e5dcbc;
@@ -14,6 +22,11 @@
     --font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* ==========================================================================
+   3. BASE / GLOBAL STYLES
+   Standaard stijlen voor kale HTML-elementen (body, h1-h6, p, img).
+   ========================================================================== */ 
+
 body {
     font-family: var(--font-family);
     background-color: #222;
@@ -23,7 +36,10 @@ body {
     min-height: 100vh;
 }
 
-/* App Container */
+/* ==========================================================================
+   4. LAYOUT & CONTAINERS
+   De grote blokken die de pagina structureren.
+   ========================================================================== */
 .app-container {
     width: 100%;
     max-width: 412px;
@@ -67,22 +83,13 @@ body {
             height: auto;
         }
     }
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowarp;
-    border: 0px;
-}
 }
 
 
-/* Zorg dat elementen boven de kaart liggen */
+/* ==========================================================================
+   5. COMPONENTEN
+   Herbruikbare onderdelen van je interface (header, cards, tabs, nav). (in mijn code zorgt dit ervoor dat het boven staat)
+   ==========================================================================*/
 .app-header, 
 .app-content, 
 .bottom-nav {
@@ -90,7 +97,7 @@ body {
     z-index: 1;
 }
 
-/* Header */
+
 .app-header {
     display: flex;
     align-items: center;
@@ -128,7 +135,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow-y: auto;   /* Scrollen naar boven en beneden */
+    overflow-y: auto;   
     overflow-x: hidden;
     z-index: 0;
 }
@@ -459,3 +466,73 @@ body {
         }
     }
 }
+
+/* ==========================================================================
+   6. UTILITIES / HULPCLASSES
+   Kleine functionele classes die één ding doen zoals visually-hidden en sr-only. 
+   ========================================================================== */
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (RESPONSIVE)
+   Altijd helemaal onderaan, zodat ze eerdere mobiele regels overschrijven.
+   ========================================================================== */ 
+
+ @media (mid-width: 768px) {
+    /* 1. Rustigere achtergrond en wat marge rondom de app */
+    body {
+        background-color: #f7f5f2;
+        padding: 40px 20px;
+        align-items: flex-start;
+    }
+
+    /* 2. Maak de app breder zodat hij tablet/desktop benut */
+    .app-container {
+        max-width: 900px;
+        max-height: 90vh;
+        border-radius: 28px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(114, 88, 60, 0.15);
+    }
+
+    /* 3. Collectiepagina: zet de plantenkaarten in een 2-koloms grid */
+    .plant-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 gelijke kolommen */
+        gap: 20px;
+        align-items: start;
+    }
+
+    /* 4. Maak de popup-kaart op grotere schermen iets ruimer */
+    .popup-card {
+        padding: 24px 30px;
+
+        &.expanded {
+            height: 460px;
+        }
+
+        .card-body {
+            gap: 24px;
+
+            .text-content h2 {
+                font-size: 22px;
+            }
+
+            .image-content {
+                width: 150px;
+
+                img {
+                    height: 150px;
+                }
+            }
+        }
+    }
+ }
